@@ -11,39 +11,45 @@ const validatePassword = (password) => {
 }
 
 const lengthCheck = (password) => {
-    if (password.length >= 8) {
-        return true
-    } else return false
+  if (password.length >= 8) {
+    return true
+  } else return false
 }
 
 const lowerCaseCheck = (password) => {
-    for (let i = 0; i < password.length; i++) {
-      const letter = password[i]
-      
-      if (letter.toUpperCase() !== letter) {
-          return true
-      }
-      
-      return false
+  for (let i = 0; i < password.length; i++) {
+    const letter = password[i]
 
+    if (letter.toUpperCase() !== letter) {
+      return true
     }
+
+    return false
+  }
 }
 
 const upperCaseCheck = (password) => {
-    for (let i = 0; i < password.length; i++) {
-        const letter = password[i]
-        
-        if (letter.toUpperCase() === letter) {
-            return true
-        }
+  for (let i = 0; i < password.length; i++) {
+    const letter = password[i]
 
-        return false
-        
-      }
+    if (letter.toUpperCase() === letter) {
+      return true
+    }
+
+    return false
+  }
 }
 
 const numberCheck = (password) => {
+  for (let i = 0; i < password.length; i++) {
+    const number = password[i]
 
+    if (Number(number)) {
+      return true
+    }
+
+    return false
+  }
 }
 
 const characterCheck = (password) => {
