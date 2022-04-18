@@ -10,7 +10,7 @@ const lowerCaseCheck = (password) => {
   for (let i = 0; i < password.length; i++) {
     const letter = password[i]
 
-    if (letter.toLowerCase() === letter) {
+    if (letter.toLowerCase() === letter && letter.toLowerCase() !== letter.toUpperCase()) {
       value = true
     }
   }
@@ -24,7 +24,7 @@ const upperCaseCheck = (password) => {
   for (let i = 0; i < password.length; i++) {
     const letter = password[i]
 
-    if (letter.toUpperCase() === letter) {
+    if (letter.toUpperCase() === letter && letter.toLowerCase() !== letter.toUpperCase()) {
       value = true
     }
   }
@@ -68,8 +68,6 @@ const validatePassword = (password) => {
   let upper = upperCaseCheck(password)
   let numb = numberCheck(password)
   let character = characterCheck(password)
-
-  console.log(length, lower, upper, numb, character)
 
   if (length && lower && upper && numb && character) {
     return true
